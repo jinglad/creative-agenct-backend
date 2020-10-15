@@ -45,14 +45,6 @@ client.connect(err => {
         const newImg = file.data;
         const encImg = newImg.toString('base64');
 
-
-        // file.mv(`${__dirname}/ordersPic/${file.name}`, err => {
-        //     if (err) {
-        //         console.log(err);
-        //         return res.send(500).send({ msg: 'Failed to upload Image' });
-        //     }
-        // })
-
         var image = {
             contentType: file.mimetype,
             size: file.size,
@@ -70,14 +62,6 @@ client.connect(err => {
         const title = req.body.title;
         const newImg = file.data;
         const encImg = newImg.toString('base64');
-
-
-        // file.mv(`${__dirname}/ordersPic/${file.name}`, err => {
-        //     if (err) {
-        //         console.log(err);
-        //         return res.send(500).send({ msg: 'Failed to upload Image' });
-        //     }
-        // })
 
         var image = {
             contentType: file.mimetype,
