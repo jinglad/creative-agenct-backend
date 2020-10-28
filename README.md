@@ -1,4 +1,4 @@
-# Creative Agency Server Side Code
+# Creative Agency Server Side
 
 * The server side code was implemented with Node.js
 * This server is connected with MongoDB
