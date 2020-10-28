@@ -27,16 +27,6 @@ client.connect(err => {
     const reviewsCollection = client.db(process.env.DB_NAME).collection("reviews");
     const adminsCollection = client.db(process.env.DB_NAME).collection("admins");
 
-    // app.post('/addService', (req, res) => {
-    //     const service = req.body;
-    //     // console.log(service);
-    //     serviceCollection.insertMany(service)
-    //         .then(result => {
-    //             console.log(result.insertedCount);
-    //             res.send(result.insertedCount);
-    //         })
-    // })
-
     app.get('/services', (req, res) => {
         serviceCollection.find({})
             .toArray((err, documents) => {
@@ -55,14 +45,6 @@ client.connect(err => {
         const newImg = file.data;
         const encImg = newImg.toString('base64');
 
-
-        file.mv(`${__dirname}/ordersPic/${file.name}`, err => {
-            if (err) {
-                console.log(err);
-                return res.send(500).send({ msg: 'Failed to upload Image' });
-            }
-        })
-
         var image = {
             contentType: file.mimetype,
             size: file.size,
@@ -80,14 +62,6 @@ client.connect(err => {
         const title = req.body.title;
         const newImg = file.data;
         const encImg = newImg.toString('base64');
-
-
-        file.mv(`${__dirname}/ordersPic/${file.name}`, err => {
-            if (err) {
-                console.log(err);
-                return res.send(500).send({ msg: 'Failed to upload Image' });
-            }
-        })
 
         var image = {
             contentType: file.mimetype,
